@@ -65,9 +65,9 @@ public class MainActivity extends Activity {
             try {
                 DB_Settings db = new DB_Settings();
                 Class.forName("org.postgresql.Driver");
-                String userName = "yakup";
-                String pass = "yzengin4642";
-                String DbUrl = "jdbc:postgresql://93.89.236.20:5432/testdb";
+                String userName = "postgres";
+                String pass = "postgres";
+                String DbUrl = "jdbc:postgresql://45.12.239.206:5432/test_db";
 
                 Connection conn = DriverManager.getConnection(DbUrl,userName,pass);
 
@@ -76,7 +76,7 @@ public class MainActivity extends Activity {
                 System.out.println("SQL Cümleciği oluşturuluyor...");
                 Statement st = conn.createStatement();
                 String stsql;
-                stsql = "SELECT * FROM Terra_App";
+                stsql = "SELECT * FROM customers";
                 //stsql = "ALTER TABLE Terra_App ALTER COLUMN lat TYPE numeric";
                 ResultSet rs = st.executeQuery(stsql);
                 ResultSetMetaData resultSetMetaData = rs.getMetaData();
@@ -95,21 +95,21 @@ public class MainActivity extends Activity {
                 //STEP 5: Extract data from result set
                 while(rs.next()){
                         String id = rs.getString( "id" );
-                        String name = rs.getString( "name" );
-                        String surename = rs.getString( "surename" );
-                        String password = rs.getString( "password" );
-                        phone = rs.getString( "phone" );
-                        String lat = rs.getString( "lat" );
-                        String lng = rs.getString( "lng" );
+                        String name = rs.getString( "firstname" );
+                        String surename = rs.getString( "lastname" );
+                    //    String password = rs.getString( "password" );
+                    //    phone = rs.getString( "phone" );
+                    //    String lat = rs.getString( "lat" );
+                    //    String lng = rs.getString( "lng" );
 
 
 
                         System.out.print(id);
-                        System.out.print("Name = "+name);
+                        System.out.print("firstname = "+name);
                         System.out.println(surename);
-                        System.out.print("Password = "+password);
-                        System.out.println(phone);
-                    System.out.println("LatLong "+lat+" "+lng);
+                     //   System.out.print("Password = "+password);
+                     //   System.out.println(phone);
+                   // System.out.println("LatLong "+lat+" "+lng);
 
                 }
 
