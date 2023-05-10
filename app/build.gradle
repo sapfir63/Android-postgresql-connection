@@ -1,11 +1,11 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 27
+    compileSdk 33
     defaultConfig {
         applicationId "tr.com.terrayazilim.postgresqlprojects"
-        minSdkVersion 14
-        targetSdkVersion 27
+        minSdk 24
+        targetSdkVersion 33
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -17,9 +17,10 @@ android {
         }
     }
     compileOptions{
-        sourceCompatibility 1.8
-        targetCompatibility 1.8
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
+    namespace 'tr.com.terrayazilim.postgresqlprojects'
 
 
 }
